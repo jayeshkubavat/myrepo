@@ -594,7 +594,7 @@ class StandardMethodCodec implements MethodCodec {
   @override
   dynamic decodeEnvelope(ByteData envelope) {
     // First byte is zero in success case, and non-zero otherwise.
-    if (envelope.lengthInBytes == 0)
+      if (envelope.lengthInBytes == 0)
       throw const FormatException('Expected envelope, got nothing');
     final ReadBuffer buffer = ReadBuffer(envelope);
     if (buffer.getUint8() == 0)
